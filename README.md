@@ -21,7 +21,19 @@ const foo: Maybe<number> = undefined;
 mapMaybe(foo, x => x * 69);
 ```
 
-# Base type
+# Installation
+
+__npm:__
+```
+npm install --save mighty-maybe
+```
+
+__yarn:__
+```
+yarn add mighty-maybe
+```
+
+# Base types
 
 No classes, only 2 simple types.
 
@@ -30,6 +42,8 @@ type Maybe<T> = T | null | undefined;
 
 export type OperatorMaybeFunction<T, V> = (val: NonNullable<T>) => V;
 ```
+
+
 
 # Functions
 
