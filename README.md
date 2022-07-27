@@ -93,7 +93,7 @@ Chain a series of callbacks on a `Maybe<T>`
 
 ```typescript
 const someUntypedObject: Record<string, number> = {};
- *
+
 maybePipe<number>(someObject,
     x => x.foo,
     y => y != 42 ? y : null,
