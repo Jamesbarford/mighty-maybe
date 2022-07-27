@@ -1,5 +1,7 @@
 # Mighty Maybe
-
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/29375815/181317257-55bbf65f-22a4-4897-ab98-dc67c1bf109b.png"/>
+</p>
 Yet another `Maybe` library. This uses a simple type of `T | null | undefined` and provides a callback functions that operate on a `Maybe`. This aims to be a zero overhead abstraction.
 
 ```typescript
