@@ -49,7 +49,7 @@ export type OperatorMaybeFunction<T, V> = (val: NonNullable<T>) => V;
 
 Example:
 
-## `isMaybe(arg: any)`
+### `isMaybe(arg: any)`
 
 Return true if value is `null` or `undefined`.
 
@@ -61,7 +61,7 @@ const arr: number[] = [];
 isMaybe(arr.length); // false
 ```
 
-## `maybeFirst<T>(maybes: Maybe<T>[], cb: (val: T) => V): Maybe<V>`
+### `maybeFirst<T>(maybes: Maybe<T>[], cb: (val: T) => V): Maybe<V>`
 
 Calls callback `cb` on first non `Maybe<T>` value from an array of maybes.
 
@@ -69,7 +69,7 @@ Calls callback `cb` on first non `Maybe<T>` value from an array of maybes.
 maybeFirst([null, null, 32]); // 32
 ```
 
-## `maybeMap<T, V>(maybe: Maybe<V>, cb: (val: V) => V): Maybe<V>`
+### `maybeMap<T, V>(maybe: Maybe<V>, cb: (val: V) => V): Maybe<V>`
 
 Invoke callback on `Maybe` returning the value or null
 
@@ -78,7 +78,7 @@ mapMaybe<number, string>(42, x => String(x)); // "42"
 mapMaybe<number, string>(undefined, x => String(x)); // null
 ```
 
-## `maybeMapOrElse<T, V>(maybe: Maybe<T>, cb: OperatorMaybeFunction<T, V>) => Maybe<V>`
+### `maybeMapOrElse<T, V>(maybe: Maybe<T>, cb: OperatorMaybeFunction<T, V>) => Maybe<V>`
 
 Call function on maybe or fallback to a defined callback
 
@@ -88,7 +88,7 @@ const value: Maybe<number> = 2
 maybeMapOrElse(value, val => val * 22, () => 42);
 ```
 
-## `maybePipe<T, ...Y>(maybe: Maybe<T>, ...operations: )`
+### `maybePipe<T, ...Y>(maybe: Maybe<T>, ...operations: )`
 Chain a series of callbacks on a `Maybe<T>`
 
 ```typescript
@@ -111,7 +111,7 @@ maybePipe<number>(someObject,
 );
 ```
 
-## `maybeMapAll<...S1, V>(maybes: Maybe<...S1>[], cb: (val: ...S1[]) => V): Maybe<V>`
+### `maybeMapAll<...S1, V>(maybes: Maybe<...S1>[], cb: (val: ...S1[]) => V): Maybe<V>`
 
 Invoke callback on array of maybes only if _all_ of the maybes are NonNullable. Here the callback function would not get invoked as `circle2` is null:
 
