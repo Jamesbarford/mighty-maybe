@@ -11,9 +11,9 @@ import { Maybe, maybePipe, mapMaybe } from "mighty-maybe";
 const someValue = {}; //...imagine some nested object
 
 const maybeResult: Maybe<number> = maybePipe(someValue,
-  x => x.foo,
-  y => y.bar,
-  z => z * 24
+    x => x.foo,
+    y => y.bar,
+    z => z * 24
 );
 
 const foo: Maybe<number> = undefined;
@@ -95,19 +95,19 @@ Chain a series of callbacks on a `Maybe<T>`
 const someUntypedObject: Record<string, number> = {};
  *
 maybePipe<number>(someObject,
-		x => x.foo,
-		y => y != 42 ? y : null,
-		z => z + 2
+    x => x.foo,
+    y => y != 42 ? y : null,
+    z => z + 2
 );
- *
+ 
 // Or with the pre-defined operations
- *
+ 
 const someUntypedObject: Record<string, number> = {};
- *
+ 
 maybePipe<number>(someObject,
-		maybeOpMap(x => x.foo),
-		maybeOpFilter(y => y != 42)
-		maybeOpMap(z => z + 2)
+    maybeOpMap(x => x.foo),
+    maybeOpFilter(y => y != 42)
+    maybeOpMap(z => z + 2)
 );
 ```
 
