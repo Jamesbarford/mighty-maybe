@@ -9,7 +9,11 @@ export function maybeFirst<T, V>(
   maybes: Maybe<T>[],
   cb: (val: T) => V
 ): Maybe<V> {
-  for (const maybe of maybes) {
+  const len = maybes ? maybes.length : 0
+  let maybe = null;
+  for (let i = 0; i < len; ++i) {
+    maybe = maybes[i];
+
     if (!isMaybe(maybe)) {
       return cb(maybe);
     }
@@ -58,11 +62,16 @@ function __maybePipe<T, V>(
   cbs: OperatorMaybeFunction<T, V>[]
 ): Maybe<V> {
   let next: Maybe<any> = maybe;
-  for (const callback of cbs) {
+  let cb: OperatorMaybeFunction<any, any>;
+  const len = cbs.length;
+
+  for (let i = 0; i < len; ++i) {
+    cb = cbs[i];
     if (!isMaybe(next)) {
-      next = callback(next);
+      next = cb(next);
     }
   }
+
   return next;
 }
 
@@ -77,10 +86,20 @@ export function maybeMapAll<V>(
   maybes: Maybe<any>[],
   cb: (val: any) => V
 ): Maybe<V> {
-  for (const maybe of maybes) {
+  if (isMaybe(maybes)) {
+    return null;
+  }
+
+  let i = 0;
+  const len = maybes.length;
+  let maybe = maybes[i];
+
+  for (; i < len; ++i) {
     if (isMaybe(maybe)) {
       return null;
     }
+    maybe = maybes[i++];
   }
+
   return cb(maybes);
 }

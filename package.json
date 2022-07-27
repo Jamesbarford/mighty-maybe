@@ -1,6 +1,6 @@
 {
 	"name": "mighty-maybe",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Maybe library for working with null and undefined",
 	"author": "James Barford-Evans",
 	"license": "ISC",

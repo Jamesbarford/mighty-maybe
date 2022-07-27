@@ -18,7 +18,7 @@ deploy() {
   cp ./README.md ./dist;
   cp ./src/index.d.ts ./dist
   cd ./dist
-  #npm publish
+  npm publish
   cd ..
 }
 
