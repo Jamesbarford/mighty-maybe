@@ -1,0 +1,19 @@
+{
+	"name": "mighty-maybe",
+	"version": "1.0.0",
+	"description": "Maybe library for working with null and undefined",
+	"author": "James Barford-Evans",
+	"main": "index.js",
+	"scripts": {
+		"format": "prettier --write ./src",
+		"test": "jest --detectOpenHandles",
+		"test:watch": "jest --detectOpenHandles --watch"
+	},
+  "devDependencies": {
+		"jest": "^28.1.3",
+		"prettier": "^2.7.1",
+		"ts-jest": "^28.0.7",
+		"typescript": "^4.3.5"
+  },
+  "dependencies": {}
+}

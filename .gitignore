@@ -1,0 +1,5 @@
+dist
+.vscode
+.idea
+.swp
+node_modules
