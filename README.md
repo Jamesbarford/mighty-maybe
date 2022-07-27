@@ -7,7 +7,7 @@ Yet another `Maybe` library. This uses a simple type of `T | null | undefined` a
 ```typescript
 import { Maybe, maybePipe, mapMaybe } from "mighty-maybe";
 
-const someValue = //...
+const someValue = {}; //...imagine some nested object
 
 const maybeResult: Maybe<number> = maybePipe(someValue,
   x => x.foo,
