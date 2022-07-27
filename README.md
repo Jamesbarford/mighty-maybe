@@ -4,6 +4,7 @@
 </p>
 Yet another `Maybe` library. This uses a simple type of `T | null | undefined` and provides a callback functions that operate on a `Maybe`. This aims to be a zero overhead abstraction.
 
+
 ```typescript
 import { Maybe, maybePipe, mapMaybe } from "mighty-maybe";
 
