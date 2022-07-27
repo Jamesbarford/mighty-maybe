@@ -94,7 +94,7 @@ maybePipe<number>(someObject,
 );
 ```
 
-## maybeMapAll<...S1, V>(maybes: Maybe<...S1>[], cb: (val: ...S1[]) => V): Maybe<V>
+## `maybeMapAll<...S1, V>(maybes: Maybe<...S1>[], cb: (val: ...S1[]) => V): Maybe<V>`
 
 Invoke callback on array of maybes only if _all_ of the maybes are NonNullable. Here the callback function would not get invoked as `circle2` is null:
 
