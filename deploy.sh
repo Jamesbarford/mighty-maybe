@@ -12,6 +12,7 @@ getVersionCommand() {
 
 deploy() {
   local cmd=$(getVersionCommand $1)
+  local version=(cat ./package.json | jq -r '.version')
   rm -rf ./dist
   yarn build
   cp ./package.json ./dist
@@ -20,6 +21,7 @@ deploy() {
   cd ./dist
   npm publish
   cd ..
+  git tag "${version}" && git push --tags
 }
 
 deploy $@
