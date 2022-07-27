@@ -7,9 +7,9 @@ import {
   maybeMapAll,
   maybeMapOrElse,
   maybePipe,
+  Maybe,
+  OperatorMaybeFunction,
 } from "./maybe";
-
-import { Maybe, OperatorMaybeFunction } from "./types";
 
 export {
   isMaybe,
@@ -17,7 +17,6 @@ export {
   maybeMap,
   maybeMapOrElse,
   maybeMapAll,
-
   maybePipe,
   maybeOpMap,
   maybeOpFilter,

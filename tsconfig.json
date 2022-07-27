@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"lib": ["es2018"],
+		"outDir": "./dist",
+		"strict": true,
+		"esModuleInterop": true,
+		"jsx": "react",
+		"noImplicitAny": true,
+		"useDefineForClassFields": false,
+		"downlevelIteration": true
+	},
+	"include": ["./src/", "./**/*.ts"],
+	"exclude": ["./tests"]
+}

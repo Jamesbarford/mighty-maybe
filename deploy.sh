@@ -13,11 +13,13 @@ getVersionCommand() {
 deploy() {
   local cmd=$(getVersionCommand $1)
   rm -rf ./dist
-  tsc
+  yarn build
   cp ./package.json ./dist
   cp ./README.md ./dist;
+  cp ./src/index.d.ts ./dist
   cd ./dist
-  npm publish
+  #npm publish
+  cd ..
 }
 
-deploy
+deploy $@

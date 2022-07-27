@@ -1,4 +1,5 @@
-import { Maybe, OperatorMaybeFunction } from "./types";
+export type Maybe<T> = T | null | undefined;
+export type OperatorMaybeFunction<T, V> = (val: NonNullable<T>) => V;
 
 export function isMaybe(arg: any): arg is null | undefined {
   return arg === undefined || arg === null;
